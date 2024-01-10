@@ -3,7 +3,6 @@ import mediapipe as mp
 
 mp_holistic=mp.solutions.holistic
 mp_drawing=mp.solutions.drawing_utils
-height,width,channel=0,0,0
 
 def setDimension(shape):
     global height,width,channel
@@ -26,7 +25,7 @@ def draw_landmarks(image,results):
     mp_drawing.draw_landmarks(image,results.right_hand_landmarks,mp_holistic.HAND_CONNECTIONS)
     mp_drawing.draw_landmarks(image,results.left_hand_landmarks,mp_holistic.HAND_CONNECTIONS)
 
-def collectData(results,dots):
+def collectData(results,dots,width,height):
     if results.left_hand_landmarks:
         for id,lm in enumerate(results.left_hand_landmarks.landmark):
             dots['lh'].update({str(id):{'x':int(lm.x*width),'y':int(lm.y*height),'z':int(lm.y*width)}})

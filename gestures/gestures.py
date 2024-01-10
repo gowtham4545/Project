@@ -1,7 +1,7 @@
 from .positions import *
 face,pose,left,right='face','pose','lh','rh'
 
-__all__=['iLoveYou']
+__all__=['iLoveYou','father','mother','house','hello','thanks']
 
 @handler
 def iLoveYou(dots):

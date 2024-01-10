@@ -1,9 +1,11 @@
 def handler(func):
+    '''This decorator prevents errors when the method is called, specifically addressing and avoiding KeyErrors in this module.'''
     def wrapper(*args):
         try:
             return func(*args)
         except:
-            return False
+            # return False
+            print('error')
     return wrapper
 
 @handler
