@@ -1,6 +1,8 @@
 from .positions import *
 face,pose,left,right='face','pose','lh','rh'
 
+__all__=['iLoveYou','father','mother','house','hello','thanks']
+
 @handler
 def iLoveYou(dots):
     if (bool(dots['lh']) and left_thumb_open(dots) and left_fore_finger_up(dots) and left_middle_finger_down(dots) and left_ring_finger_down(dots) and left_small_finger_up(dots)) or (bool(dots['rh']) and right_thumb_open(dots) and right_fore_finger_up(dots) and right_middle_finger_down(dots) and right_ring_finger_down(dots) and right_small_finger_up(dots)):
