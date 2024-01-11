@@ -4,8 +4,8 @@ def handler(func):
         try:
             return func(*args)
         except:
-            # return False
-            print('error')
+            return False
+            # print('error')
     return wrapper
 
 @handler
