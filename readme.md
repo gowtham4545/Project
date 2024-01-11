@@ -15,7 +15,9 @@ The key objectives of Sign2Sound are rooted in enhancing the quality of life for
 4. Facilitate communication between individuals who are proficient in sign language and those who may not understand it, fostering a more inclusive and understanding society.
 
 ## Environmental Setup and Running
-Install Python and the enter this command
-        
-        pip install > requirements.txt
-        python app.py
+Install Python and then run the following command in your terminal or command prompt:
+
+```bash
+pip install -r requirements.txt
+python app.py
+```
