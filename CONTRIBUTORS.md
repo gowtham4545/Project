@@ -37,5 +37,18 @@
       </a>
     </td>
     <!-- End of column-2 -->
+    <!-- Start of column-3 -->
+    <td align="center">
+      <a href="https://github.com/gowtham4545">
+        <img
+          src="https://avatars.githubusercontent.com/u/90670943?s=64&v=4"
+          width="100px"
+          alt="Gowtham"
+        />
+        <br />
+        <sub>Gowtham</sub>
+      </a>
+    </td>
+    <!-- End of column-3 -->
   </tr>
 </table>
