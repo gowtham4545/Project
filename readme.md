@@ -63,4 +63,4 @@ Regularly seeking feedback from users and incorporating their suggestions into t
 8. Accessibility Standards Compliance
 Ensuring that Sign2Sound adheres to accessibility standards and guidelines would make it more inclusive and compatible with assistive technologies. Compliance with standards such as WCAG (Web Content Accessibility Guidelines) could improve the overall accessibility of the system.
 
-<!-- Other .... -->
+<!-- Other ........ . . .  -->
