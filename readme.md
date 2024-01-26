@@ -20,7 +20,7 @@ The key objectives of Sign2Sound are rooted in enhancing the quality of life for
 
 ### 1. Gesture Recognition Module
 The Gesture Recognition Module serves as the entry point for the system, capturing live sign language gestures through the camera feed. Employing computer vision techniques, this module extracts meaningful features from the video stream, identifying and tracking the user's hand movements, facial expressions, and body postures. OpenCV, a versatile computer vision library, is utilized to implement the real-time gesture recognition, ensuring accurate and responsive interpretation of sign language.
-<!-- ![](./facepoints.jpg) -->
+![](./poses.png)
 
 ### 2. Sentence Generation Module
 Once the Gesture Recognition Module successfully identifies and processes the live gestures, the Sentence Generation Module takes charge of converting these gestures into coherent sentences. This module relies on a comprehensive dictionary of sign language gestures, associating each recognized gesture with its corresponding linguistic representation. Machine learning models, trained on diverse datasets of sign language expressions, play a pivotal role in refining the accuracy of gesture-to-sentence mapping.
@@ -31,7 +31,7 @@ The Text-to-Speech Module transforms the generated sentences into natural-soundi
 ## Environmental Setup and Running
 Install Python and then run the following command in your terminal or command prompt:
 
-```bash
+```shell
 # Establish a virtual environment if you want
 pip install -r requirements.txt
 python app.py
