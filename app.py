@@ -41,8 +41,8 @@ def interface():
 background = Thread(target=daemon, daemon=True, args=())
 background.start()
 
-# user=Thread(daemon=True,target=interface)
-# interface()
-# user.start()
-input(';')
+user=Thread(daemon=True,target=interface)
+interface()
+user.start()
+input()
 print(buffer)
