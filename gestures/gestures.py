@@ -1,7 +1,7 @@
 from .positions import *
 face,pose,left,right='face','pose','lh','rh'
 
-__all__=['iLoveYou','father','mother','house','hello','thanks']
+__all__=['iLoveYou','father','mother','house','hello','thanks','point']
 
 @handler
 def iLoveYou(dots):
@@ -31,4 +31,10 @@ def hello(dots):
 @handler
 def thanks(dots):
     return openLeftFist(dots) and openRightFist(dots) and intersect(dots,left,12,right,12) and intersect(dots,left,12,face,13) and abs(dots[left]['4']['x']-dots[right]['4']['x'])>80 
+
+@handler
+def point(dots):
+    if (bool(dots['lh']) and left_thumb_closed(dots) and left_fore_finger_up(dots) and left_middle_finger_down(dots) and left_ring_finger_down(dots) and left_small_finger_down(dots)) or (bool(dots['rh']) and right_thumb_closed(dots) and right_fore_finger_up(dots) and right_middle_finger_down(dots) and right_ring_finger_down(dots) and right_small_finger_down(dots)):
+        return True
+    return False
 
