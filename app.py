@@ -1,15 +1,13 @@
 from gestures import gestures as gstr
 from gestures.init import *
-from threading import Thread, Event
+from threading import Thread
 import cv2
-
-
-buffer = []
-holistic = mp_holistic.Holistic()
-key=int(0)
-
+from colorama import Fore, Style
+from modules import speech
 
 def daemon():
+    print(Fore.GREEN + "Daemon Capturing ...")
+    buffer = ['']
     capture = cv2.VideoCapture(0)
     capture.set(3, 1280)
     capture.set(4, 700)
@@ -24,25 +22,33 @@ def daemon():
             func = getattr(gstr, name)
             if func(dots):
                 gesture = name
+                if gesture != buffer[-1]:
+                    buffer.append(gesture)
                 break
-        printI(image,gesture)
+        printI(image, gesture)
         draw_landmarks(image, results)
         cv2.imshow("Sign2Sound", image)
-        k = cv2.waitKey(10)
-        key=k
+        key = cv2.waitKey(10)
 
-def interface():
-    while True:
-        if key  & 0xFF=='q':
-            return
-        elif key & 0xFF=='p':
-            print(buffer)
+        if key & 0xFF == ord('q'):
+            print(Fore.RED + 'Daemon Terminating ...')
+            print(Fore.MAGENTA+'Click Enter to exit:')
+            exit(0)
 
-background = Thread(target=daemon, daemon=True, args=())
-background.start()
+        if key & 0xFF == ord('p'):
+            print(Fore.CYAN + str(buffer))
 
-# user=Thread(daemon=True,target=interface)
-# interface()
-# user.start()
-input(';')
-print(buffer)
+        if key & 0xFF == ord('s'):
+            speak=Thread(target=speech(buffer),daemon=True,args=())
+            speak.start()
+
+
+if __name__ == "__main__":
+    holistic = mp_holistic.Holistic()
+
+    background = Thread(target=daemon, daemon=True, args=())
+
+    background.start()
+
+    input()
+    print(Style.RESET_ALL+"Exiting ...")
